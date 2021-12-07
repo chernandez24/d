@@ -1,0 +1,198 @@
+//monopoly
+var Jailstatus = false
+var pom = 1;
+startmenu();
+function startmenu(){
+var bot = prompt("How many friends do you have? 1-3");
+}
+console.log("What character would you like to choose?");
+var chars = prompt("dictator, boot, car, cat or boat");
+//what character they choose
+if (chars == "dictator"){
+  console.log("You chose dictator!")
+}
+
+if (chars == "boot"){
+  console.log("You chose boot.")
+}
+
+if (chars == "car"){
+  console.log("You chose car.")
+}
+
+if (chars == "cat"){
+  console.log("You chose cat.")
+}
+
+if (chars == "boat"){
+  console.log("You chose boat.")
+}
+
+function getRandomInt(max) {
+  return Math.floor(Math.random() * max);
+}
+//getRandomInt(10)
+
+function dicrol(){
+	var dicerole = 0;
+	dicerole = getRandomInt(11) + 1;
+	console.log("You moved " + dicerole);
+	pom = pom + dicerole;
+}
+//menu
+var playermoney = 1500;
+menu();
+function menu(){
+	console.log("You have $" + playermoney);
+	var turn = prompt("Roll / Inventory / Trading");
+	if (turn == "Roll"){
+		dicrol();
+	}
+}
+//comunity chest
+var CC
+function CCC(){
+	CC = getRandomInt(7) + 1;
+	if (CC == 1){
+		console.log("Advance to Go (Collect $200)");
+		pom = 0;
+	}
+	if (CC == 2){
+		console.log("Bank pays you for paying your taxes (Collect $200)");
+		playermoney = playermoney + 200;
+	}
+	if (CC == 3){
+		console.log("Taxes (pay $50)");
+		playermoney = playermoney - 50;
+	}
+	if (CC == 4){
+		console.log("Sellout a comumnist (Earn $50)");
+		playermoney = playermoney + 50;
+	}
+	if (CC == 5){
+		console.log("Your parents are rich (Get out of Jail free)");
+		playermoney = playermoney + 50;
+	}
+	if (CC == 6){
+		console.log("Someone sold you out for being a communist(Go to Jail)");
+		pom = 11;
+		JailStatus = true;
+	}
+	if (CC == 7){
+		console.log("Your parents like you finally (Earn $100)");
+		playermoney = playermoney + 100;
+	}
+	if (CC == 8){
+		console.log("Govement pays you for paying your taxes (Collect $20)");
+		playermoney = playermoney + 20;
+	}
+
+
+
+}
+//money
+// board movement
+var SS = 0;
+var PP = 0
+var DO = 0
+pom = 3
+//position on board
+if (pom == 0 ){
+	console.log("Pass go");
+	console.log("You collected 200");
+	playermoney = playermoney + 200
+	pom = 1;
+}
+//salty Springs
+if (pom == 2 ){
+	console.log("You Landed on Salty Springs"); 
+		if (SS = 0){
+			var SS = prompt("Would You like to buy");
+			if (SS == "yes"){
+				playermoney = playermoney - 60;
+				SS = -1
+			}
+		}
+		if (SS == 5){
+			console.log("You have to pay 2 'dollars'");
+			playermoney = playermoney - 2;
+		}
+		if (SS == 2){
+			console.log("You have to pay 10 'dollars'");
+			playermoney = playermoney - 10;
+		}
+		if (SS == 3){
+			console.log("You have to pay 30 'dollars'");
+			playermoney = playermoney - 30;
+		}
+		if (SS == 4){
+			console.log("You have to pay 90 'dollars'");
+			playermoney = playermoney - 90;
+		}
+		if (SS == 5){
+			console.log("You have to pay 160 'dollars'");
+			playermoney = playermoney - 160;
+		}
+		if (SS == 6){
+			console.log("You have to pay 250 'dollars'");
+			playermoney = playermoney - 250;
+		}
+		
+}
+//Goverment works
+if (pom == 3 ){
+	console.log("You landed on Goverment Works");
+	CCC();
+}
+
+if (pom == 4 ){
+	console.log("You Landed on Plesent Park"); 
+		if (PP = 0){
+			var PP = prompt("Would You like to buy");
+			if (PP == "yes"){
+				playermoney = playermoney - 60;
+				PP = -1
+			}
+		}
+		if (PP == 1){
+			console.log("You have to pay 4 'dollars'");
+			playermoney = playermoney - 4;
+		}
+		if (PP == 2){
+			console.log("You have to pay 20'dollars'");
+			playermoney = playermoney - 20;
+		}
+		if (PP == 3){
+			console.log("You have to pay 60 'dollars'");
+			playermoney = playermoney - 60;
+		}
+		if (PP == 4){
+			console.log("You have to pay 180 'dollars'");
+			playermoney = playermoney - 180;
+		}
+		if (PP == 5){
+			console.log("You have to pay 320 'dollars'");
+			playermoney = playermoney - 320;
+		}
+		if (PP == 6){
+			console.log("You have to pay 450 'dollars'");
+			playermoney = playermoney - 450;
+		}
+}
+
+if (pom == 5){
+  console.log("Income tax becuase Capitalism");
+  playermoney = playermoney - 200
+}
+if (pom == 6){
+	if (DO == 0){
+		var DO = prompt("Would you like to buy Dragon Oil Company for $200?");
+	}
+	if(DO == Yes){
+		playermoney = playermoney - 200
+		DO = -1
+		
+	}else{
+		console.log("skip");
+  }
+}
